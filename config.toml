@@ -16,3 +16,23 @@ experience = "5"
 description = "Ofereço a você a venda direta com a construtora, proporcionando um atendimento exclusivo e uma negociação rápida e direta. É a confiança e agilidade que você precisa para realizar seu sonho ou investir nas melhores oportunidades."
 whatsapp = "(11) 981852310"
 image = "/uploads/paulo-baptista.png"
+
+paginate = 6
+
+[params]
+  CorretorNome = "Paulo Baptista"
+
+  [[params.Diferenciais]]
+    Title = "Atendimento Personalizado"
+    Description = "Paulo acompanha cada etapa da compra, entendendo suas necessidades e oferecendo as melhores opções para você."
+    Icon = "uploads/atendimento.png"
+
+  [[params.Diferenciais]]
+    Title = "Oportunidades Exclusivas"
+    Description = "Acesso a imóveis com condições diferenciadas e negociações diretas para garantir o melhor investimento."
+    Icon = "uploads/oportunidades.png"
+
+  [[params.Diferenciais]]
+    Title = "Segurança e Transparência"
+    Description = "Todo o processo de compra com suporte completo, garantindo tranquilidade e segurança jurídica para você."
+    Icon = "uploads/seguranca.png"

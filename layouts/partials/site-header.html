@@ -10,18 +10,23 @@
       </div>
     </div>
     
-    <nav class="flex items-center">
+    <!-- Ícone do Menu (Hambúrguer) -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  
+    <nav>
       <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
       <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
       <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
     </nav>
-
-    <a href="https://w.app/la75bz" target="_blank" rel="noopener">
-      <div class="whatsapp">
-        <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
-        <span>11981852310</span>
-      </div>
-    </a>    
+  
+    <a class="whatsapp" href="https://w.app/la75bz" target="_blank" rel="noopener">
+      <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+      <span>11981852310</span>
+    </a>
   </header>
   
 {{ else }}
@@ -34,18 +39,29 @@
     </div>
   </div>
   
-  <nav class="flex items-center">
+  <!-- Ícone do Menu (Hambúrguer) -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav>
     <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
     <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
     <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
   </nav>
 
   <a class="whatsapp" href="https://w.app/la75bz" target="_blank" rel="noopener">
-    <div class="whatsapp">
-      <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
-      <span>11981852310</span>
-    </div>
+    <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+    <span>11981852310</span>
   </a>
 </header>
+
+<script>
+  function toggleMenu() {
+    document.querySelector('.site-header').classList.toggle('menu-open');
+  }
+</script>
 
 {{ end }}

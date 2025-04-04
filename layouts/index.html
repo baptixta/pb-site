@@ -13,22 +13,22 @@
     {{ $section_name := index (.Site.Params.mainSections) 0 }}
 
     <section class="empreendimentos">
-      <h2>↓ Empreendimentos ↓</h2>
+      <h2>Empreendimentos</h2>
       <p>Encontre seu imóvel ideal!</p>
     
       <div class="grid">
         {{ $paginator := .Paginate (where .Site.RegularPages "Section" "empreendimentos") 6 }}
         {{ range $paginator.Pages }}
         <div class="card">
-          <img src="{{ .Params.image }}" alt="{{ .Title }}">
-          <div class="badge">{{ .Params.status }}</div>
+          <img src="{{ index .Params.imagens 0 | relURL }}" alt="{{ .Title }}">
+          <div class="badge">{{ .Params.categoria }}</div>
           <h3>{{ .Title }}</h3>
-          <p>{{ .Params.description }}</p>
+          <p>{{ .Params.description | truncate 75 }}</p>
           <div class="info">
             <span>🛏️ {{ .Params.dormitorios }}</span>
             <span>📏 {{ .Params.area }}</span>
           </div>
-          <p class="status">{{ .Params.status }}</p>
+          <p class="status">{{ .Params.categoria }}</p>
           <a href="{{ .RelPermalink }}" class="button">SAIBA MAIS</a>
         </div>
         {{ end }}
@@ -47,5 +47,9 @@
         {{ end }}
       </div>
     </section>
+
+    {{ partial "about.html" . }}
+
+    {{ partial "diferenciais.html" . }}
   {{ end }}
 {{ end }}

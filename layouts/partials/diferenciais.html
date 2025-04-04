@@ -1,0 +1,15 @@
+<section class="diferenciais">
+    <h2>Por que comprar com {{ .Site.Params.CorretorNome }}?</h2>
+    <p>Vantagens exclusivas para encontrar o imóvel ideal com segurança e praticidade.</p>
+  
+    <div class="grid">
+      {{ range .Site.Params.Diferenciais }}
+        <div class="diferencial">
+          <img class="diferencial-img" src="{{ .Icon }}" alt="Ícone {{ .Title }}">
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+        </div>
+      {{ end }}
+    </div>
+  </section>
+  
