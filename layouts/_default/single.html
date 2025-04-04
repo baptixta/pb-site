@@ -1,15 +1,45 @@
 {{ define "main" }}
-  <article>
+  <article class="article-base">
+    {{ if .Params.imagem }}
+      <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}">
+    {{ end }}
     <h1>{{ .Title }}</h1>
     <p><strong>Descrição:</strong> {{ .Params.description }}</p>
     <p><strong>Preço:</strong> {{ .Params.preco }}</p>
     <p><strong>Localização:</strong> {{ .Params.localizacao }}</p>
-    <p><strong>Dorms:</strong> {{ .Params.dorms }}</p>
+    <p><strong>Dorms:</strong> {{ .Params.dormitorios }}</p>
     <p><strong>Área:</strong> {{ .Params.area }}</p>
-    <p><strong>Categoria:</strong> {{ .Params.categoria }}</p>
-    
-    {{ if .Params.imagem }}
-      <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}" style="max-width: 500px;">
-    {{ end }}
+    <p><strong>Categoria:</strong> {{ .Params.categoria }}</p>    
   </article>
+
+  <!-- Lista de Outros Empreendimentos -->
+   <article class="article-more">
+    <h2 class="others">Outros Empreendimentos</h2>
+    <ul class="others-buildings-ul">
+      {{ range where .Site.RegularPages "Section" "empreendimentos" }}
+        {{ if ne .RelPermalink $.RelPermalink }}  <!-- Evita mostrar o próprio empreendimento -->
+          <li class="others-buildings-li">  
+            <h3>{{ .Params.categoria }}</h3>            
+            <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}">
+            <h2 href="{{ .RelPermalink }}">{{ .Title }}</h2>       
+            <p class="others-buildings-text">{{ .Params.description | truncate 75 }}</p>
+            <div class="others-info">
+                <div>
+                    <h2>Dorms.</h2>
+                    <h3>{{ .Params.dormitorios }}</h3>
+                </div>
+
+                <div>
+                    <h2>Área</h2>
+                    <h3>{{ .Params.area }}</h3>
+                </div>             
+            </div>   
+            <a class="others-more" href="{{ .RelPermalink }}">
+                Saiba Mais
+            </a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+   </article>
 {{ end }}
