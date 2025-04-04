@@ -1,0 +1,14 @@
+<div class="destaque">
+    <div class="destaque-bg" style="background-image: url('{{ index .Params.imagens 0 | relURL }}');">
+        <div class="destaque-info">
+            <h2>{{ .Params.title }}</h2>
+            <p>{{ .Params.localizacao }}</p>
+            <div class="destaque-details">
+              <span>🏡<strong>Dorms:</strong> {{ .Params.dormitorios }}</span>
+              <span>📏<strong>Área:</strong> {{ .Params.area }}</span>
+            </div>
+            <a href="{{ .Permalink }}" class="cta">Saiba mais</a>
+          </div>
+    </div>    
+  </div>
+  

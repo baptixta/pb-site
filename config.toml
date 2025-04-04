@@ -18,6 +18,7 @@ whatsapp = "(11) 981852310"
 image = "/uploads/paulo-baptista.png"
 
 paginate = 6
+paginateSecond = 9
 
 [params]
   CorretorNome = "Paulo Baptista"

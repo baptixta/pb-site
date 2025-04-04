@@ -10,7 +10,14 @@
   {{ $section_count := len $section }}
   {{ if ge $section_count 1 }}
     {{/* Derive the section name  */}}
-    {{ $section_name := index (.Site.Params.mainSections) 0 }}
+    {{ $section_name := index (.Site.Params.mainSections) 0 }}    
+
+    {{ $empreendimentos := where .Site.RegularPages "Section" "empreendimentos" }}
+    {{ $destaque := index $empreendimentos 0 }}
+
+    {{ if $destaque }}
+      {{ partial "destaque.html" $destaque }}
+    {{ end }}
 
     <section class="empreendimentos">
       <h2>Empreendimentos</h2>
@@ -20,7 +27,7 @@
         {{ $paginator := .Paginate (where .Site.RegularPages "Section" "empreendimentos") 6 }}
         {{ range $paginator.Pages }}
         <div class="card">
-          <img src="{{ index .Params.imagens 0 | relURL }}" alt="{{ .Title }}">
+          <img src="{{ index .Params.imagens 0 | relURL }}" alt="{{ .Title }}" />
           <div class="badge">{{ .Params.categoria }}</div>
           <h3>{{ .Title }}</h3>
           <p>{{ .Params.description | truncate 75 }}</p>
@@ -28,7 +35,6 @@
             <span>🛏️ {{ .Params.dormitorios }}</span>
             <span>📏 {{ .Params.area }}</span>
           </div>
-          <p class="status">{{ .Params.categoria }}</p>
           <a href="{{ .RelPermalink }}" class="button">SAIBA MAIS</a>
         </div>
         {{ end }}

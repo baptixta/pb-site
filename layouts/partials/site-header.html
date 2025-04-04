@@ -18,9 +18,8 @@
     </div>
   
     <nav>
-      <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
-      <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
-      <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
+      <a href="/" class="link white-80 hover-blue pa2 br2 {{ if eq .RelPermalink "/" }}active{{ end }}">Início</a>
+      <a href="/empreendimentos" class="link white-80 hover-blue pa2 br2 {{ if eq .RelPermalink "/empreendimentos/" }}active{{ end }}">Empreendimentos</a>
     </nav>
   
     <a class="whatsapp" href="https://w.app/la75bz" target="_blank" rel="noopener">
@@ -47,9 +46,8 @@
   </div>
 
   <nav>
-    <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
-    <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
-    <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
+    <a href="/" class="link white-80 hover-blue pa2 br2 {{ if eq .RelPermalink "/" }}active{{ end }}">Início</a>
+    <a href="/empreendimentos" class="link white-80 hover-blue pa2 br2 {{ if eq .RelPermalink "/empreendimentos/" }}active{{ end }}">Empreendimentos</a>
   </nav>
 
   <a class="whatsapp" href="https://w.app/la75bz" target="_blank" rel="noopener">

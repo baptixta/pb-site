@@ -1,0 +1,38 @@
+{{ define "main" }}
+
+<section class="empreendimentos">
+    <h2>Empreendimentos</h2>
+    <p>Encontre seu imóvel ideal!</p>
+  
+    <div class="grid">
+      {{ $paginator := .Paginate (where .Site.RegularPages "Section" "empreendimentos") 9 }}
+      {{ range $paginator.Pages }}
+      <div class="card">
+        <img src="{{ index .Params.imagens 0 | relURL }}" alt="{{ .Title }}">
+        <div class="badge">{{ .Params.categoria }}</div>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.description | truncate 75 }}</p>
+        <div class="info">
+          <span>🛏️ {{ .Params.dormitorios }}</span>
+          <span>📏 {{ .Params.area }}</span>
+        </div>
+        <p class="status">{{ .Params.categoria }}</p>
+        <a href="{{ .RelPermalink }}" class="button">SAIBA MAIS</a>
+      </div>
+      {{ end }}
+    </div>
+  
+    <!-- Paginação -->
+    <div class="pagination">
+      {{ if $paginator.HasPrev }}
+        <a href="{{ $paginator.Prev.URL }}">«</a>
+      {{ end }}
+      {{ range $paginator.Pagers }}
+        <a href="{{ .URL }}" class="{{ if eq . $paginator }}active{{ end }}">{{ .PageNumber }}</a>
+      {{ end }}
+      {{ if $paginator.HasNext }}
+        <a href="{{ $paginator.Next.URL }}">»</a>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
