@@ -20,22 +20,22 @@ body {
 }
 
 .site-icon {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .main-name {
-    display: flex;
-    align-items: center;
-    color: #fff;
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
 
 .main-name-title {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+  font-size: 1.5rem;
+  margin-bottom: 0;
 }
 
 .main-name-subtitle {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 nav a {
@@ -44,10 +44,30 @@ nav a {
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
+  transition: all .4s ease;
 }
 
 nav a:hover {
   background: #0056b3;
+}
+
+.nav-active {
+  background: #0056b3;
+}
+
+.whatsapp {
+ color: #fff;   
+ display: flex;
+ gap: .4rem;
+ padding: 5px 10px;
+ font-size: 1.2rem;
+ text-decoration: none;
+ border-radius: 5px;
+ transition: all .4s ease;
+}
+
+.whatsapp:hover {
+    background: #189D0E;
 }
 
 .whatsapp-icon {
@@ -59,6 +79,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.main-content {
+    display: flex;
 }
 
 .article-base {
@@ -154,6 +178,8 @@ main {
   margin-top: 0;
 }
 
+
+/* carrossel empreendimento */
 .mySwiper2 {
   width: 100% !important;
   height: 400px !important;
@@ -178,3 +204,271 @@ main {
   border: 2px solid #333 !important;
   border-radius: 6px !important;
 }
+
+/* contato paulo */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .contact-info {
+    margin-top: 10px;
+  }
+  
+  .contact-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .contact-email,
+  .contact-phone {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .contact-form {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .contact-form textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .btn-enviar {
+    width: 100%;
+    background: #2f77f3;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .btn-enviar:hover {
+    background: #1a5dcc;
+  }
+  
+  /* about */
+  .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+  }
+  
+  .about-content {
+    max-width: 50%;
+  }
+  
+  .about-content h3 {
+    color: #1a5dcc;
+    font-weight: bold;
+  }
+  
+  .about-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-right: 1rem;
+    color: #333;
+  }
+  
+  .contact-info {
+    display: flex;
+    align-items: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .contact-info img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .contact-info p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .about-image img {
+    max-width: 350px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .whats-link {
+    text-decoration: none;
+    color: #000;
+    transition: all .4s ease;
+  }
+
+  .whats-link:hover {
+    color: #1a5dcc;
+  }
+
+  /* grid empreendimentos */
+  .empreendimentos {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: gray;
+    margin: 10px 0;
+  }
+  
+  .button {
+    display: block;
+    background: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+  }
+  
+  .pagination a {
+    margin: 5px;
+    padding: 8px 12px;
+    background: #ddd;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .pagination a.active {
+    background: blue;
+    color: white;
+  }
+  
+  
+  /* footer */
+  .custom-footer {
+    background: black;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-logo img {
+    height: 40px; /* Ajuste conforme necessário */
+    margin-right: 10px;
+  }
+  
+  .footer-logo h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .footer-logo p {
+    font-size: 1rem;
+    margin: 0;
+    color: #ccc;
+  }
+  
+  .footer-rights {
+    font-size: 1rem;
+    color: #ccc;
+    text-align: right;
+  }
+  

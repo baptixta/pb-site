@@ -2,11 +2,11 @@
 {{ if $featured_image }}
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
   <header class="site-header bg-black flex items-center justify-between ph4 pv3">
-    <div class="flex items-center">
-      <img src="/logo.png" alt="Logo" class="logo mr3" />
+    <div class="main-name">
+      <img class="site-icon" src="/uploads/pb-small-logo.png" alt="Logo" class="logo mr3" />
       <div class="white">
-        <h1 class="f4 ma0">Paulo Baptista</h1>
-        <p class="f6 ma0 silver">Corretor imobiliário</p>
+        <h1 class="main-name-title">Paulo Baptista</h1>
+        <p class="main-name-subtitle">Corretor imobiliário</p>
       </div>
     </div>
     
@@ -15,11 +15,13 @@
       <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
       <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
     </nav>
-  
-    <div class="flex items-center">
-      <img src="/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
-      <span class="white f6">11981852310</span>
-    </div>
+
+    <a href="https://w.app/la75bz" target="_blank" rel="noopener">
+      <div class="whatsapp">
+        <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+        <span>11981852310</span>
+      </div>
+    </a>    
   </header>
   
 {{ else }}
@@ -38,10 +40,12 @@
     <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
   </nav>
 
-  <div class="flex items-center">
-    <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
-    <span class="white f6">11981852310</span>
-  </div>
+  <a class="whatsapp" href="https://w.app/la75bz" target="_blank" rel="noopener">
+    <div class="whatsapp">
+      <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+      <span>11981852310</span>
+    </div>
+  </a>
 </header>
 
 {{ end }}

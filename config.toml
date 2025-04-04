@@ -2,3 +2,17 @@ baseURL = 'http://example.org/'
 languageCode = 'pt-br'
 title = 'Paulo Baptista Corretor Imobiliário'
 theme = "ananke"
+
+[params.contact]
+image = "/uploads/paulo-baptista.png"  # Caminho da imagem do corretor
+name = "Paulo Baptista"
+email = "paulobaptista9@gmail.com"
+phone = "(11) 98185-2310"
+
+[params.about]
+name = "Paulo Baptista"
+role = "Corretor Imobiliário"
+experience = "5"
+description = "Ofereço a você a venda direta com a construtora, proporcionando um atendimento exclusivo e uma negociação rápida e direta. É a confiança e agilidade que você precisa para realizar seu sonho ou investir nas melhores oportunidades."
+whatsapp = "(11) 981852310"
+image = "/uploads/paulo-baptista.png"

@@ -1,0 +1,21 @@
+<section class="about-section">
+    <div class="about-content">
+      <h3>Sobre mim</h3>
+      <h1>Prazer, {{ .Site.Params.about.name }}</h1>
+      <p>Olá, meu nome é {{ .Site.Params.about.name }}. Sou <strong>{{ .Site.Params.about.role }}</strong>, que oferece a você a confiança de mais de {{ .Site.Params.about.experience }} anos de experiência.</p>
+      <p>{{ .Site.Params.about.description }}</p>
+      
+      <div class="contact-info">
+        <img src="uploads/whatsapp-icon-black.png" alt="WhatsApp">        
+        <div>
+            <span>WhatsApp</span>
+            <p><a class="whats-link" href="https://wa.me/{{ .Site.Params.about.whatsapp | replace " " "" }}" target="_blank">{{ .Site.Params.about.whatsapp }}</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about-image">
+      <img src="{{ .Site.Params.about.image | relURL }}" alt="Foto de {{ .Site.Params.about.name }}">
+    </div>
+  </section>
+  

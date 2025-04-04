@@ -1,0 +1,51 @@
+{{ define "main" }}
+ <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
+    {{ .Content }}
+  </article>
+  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */}}
+  {{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+  {{/* Create a variable with that section to use in multiple places. */}}
+  {{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
+  {{/* Check to see if the section is defined for ranging through it */}}
+  {{ $section_count := len $section }}
+  {{ if ge $section_count 1 }}
+    {{/* Derive the section name  */}}
+    {{ $section_name := index (.Site.Params.mainSections) 0 }}
+
+    <section class="empreendimentos">
+      <h2>↓ Empreendimentos ↓</h2>
+      <p>Encontre seu imóvel ideal!</p>
+    
+      <div class="grid">
+        {{ $paginator := .Paginate (where .Site.RegularPages "Section" "empreendimentos") 6 }}
+        {{ range $paginator.Pages }}
+        <div class="card">
+          <img src="{{ .Params.image }}" alt="{{ .Title }}">
+          <div class="badge">{{ .Params.status }}</div>
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Params.description }}</p>
+          <div class="info">
+            <span>🛏️ {{ .Params.dormitorios }}</span>
+            <span>📏 {{ .Params.area }}</span>
+          </div>
+          <p class="status">{{ .Params.status }}</p>
+          <a href="{{ .RelPermalink }}" class="button">SAIBA MAIS</a>
+        </div>
+        {{ end }}
+      </div>
+    
+      <!-- Paginação -->
+      <div class="pagination">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">«</a>
+        {{ end }}
+        {{ range $paginator.Pagers }}
+          <a href="{{ .URL }}" class="{{ if eq . $paginator }}active{{ end }}">{{ .PageNumber }}</a>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">»</a>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

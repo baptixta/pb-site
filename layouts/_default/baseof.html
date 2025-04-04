@@ -7,6 +7,7 @@
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <link rel="icon" type="image/png" href="/uploads/pb-favicon.png">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
     {{ hugo.Generator }}
     {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
@@ -43,7 +44,6 @@
 	{{ block "head" . }}{{ partial "head-additions.html" . }}{{ end }}  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
   </head>
 
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
@@ -51,6 +51,7 @@
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
     <main class="pb7" role="main">
       {{ block "main" . }}{{ end }}
+      {{ partial "about.html" . }}
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
   </body>
