@@ -26,7 +26,7 @@ body {
 }
 
 .active {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .logo {
@@ -113,51 +113,50 @@ main {
 }
 
 .article-base > h1 {
-    font-size: 1.7rem;
-    margin-top: .25rem;
-    margin-bottom: 0;
+  font-size: 1.7rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0;
 }
 
 .article-base-location {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.95);
-    text-align: center;
-  }
-  
-  .lightbox-content {
-    margin: auto;
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 8px;
-  }
-  
-  .lightbox-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .lightbox-close:hover {
-    color: #ccc;
-  }
-  
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  text-align: center;
+}
+
+.lightbox-content {
+  margin: auto;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.lightbox-close:hover {
+  color: #ccc;
+}
 
 /* outros empreendimentos */
 
@@ -184,10 +183,11 @@ main {
 }
 
 .others-buildings-li > img {
-  min-width: 400px;
-  max-width: 400px;
-  max-height: 400px;
-  min-height: 400px;
+  width: 100%;
+  height: 200px; /* Define uma altura fixa para manter a uniformidade */
+  object-fit: cover;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 .others-buildings-li > h3 {
@@ -245,33 +245,39 @@ main {
 
 /* carrossel empreendimento */
 .mySwiper2 {
-  width: 100% !important;
-  height: 400px !important;
-  margin-bottom: 1rem !important;
-}
-
-.mySwiperThumbs {
-  height: 100px !important;
-  box-sizing: border-box !important;
-  padding: 10px 0 !important;
-}
-
-.mySwiperThumbs .swiper-slide {
-  width: 20% !important;
-  height: 100% !important;
-  opacity: 0.4 !important;
-  cursor: pointer !important;
-}
-
-.swiper-slide > img {
-    height: 400px;
-}
-
-.mySwiperThumbs .swiper-slide-thumb-active {
-  opacity: 1 !important;
-  border: 2px solid #333 !important;
-  border-radius: 6px !important;
-}
+    width: 100% !important;
+    max-height: 400px !important; /* Altura máxima */
+    height: auto !important; /* Ajuste flexível */
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Ajustar imagens para ocupar toda a área do slider */
+  .mySwiper2 .swiper-slide img {
+    width: 100%;
+    height: 100%; /* Preenche a altura disponível */
+    object-fit: cover; /* Mantém o aspect ratio sem distorcer */
+    border-radius: 8px;
+  }
+  
+  /* Ajustar miniaturas para ocupar um espaço mais uniforme */
+  .mySwiperThumbs {
+    height: 80px !important; /* Reduzi um pouco para um melhor ajuste */
+    padding: 5px 0 !important;
+  }
+  
+  .mySwiperThumbs .swiper-slide {
+    width: 20% !important;
+    height: 100% !important;
+    opacity: 0.6 !important;
+    cursor: pointer !important;
+  }
+  
+  .mySwiperThumbs .swiper-slide-thumb-active {
+    opacity: 1 !important;
+    border: 2px solid #333 !important;
+    border-radius: 6px !important;
+  }
+  
 
 /* contato paulo */
 .contact-section {
@@ -366,15 +372,15 @@ main {
 }
 
 .destaque-bg {
-    position: relative;
-    width: 100%;
-    height: 65vh;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}  
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
 .destaque-info {
   background: white;
@@ -402,46 +408,45 @@ main {
 }
 
 .destaque-details {
-    margin: 1.5rem auto;
+  margin: 1.5rem auto;
 }
 
 .cta {
-    background-color: blue;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-size: 1.3rem;
-    margin: 2rem auto;
+  background-color: blue;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 1.3rem;
+  margin: 2rem auto;
 }
 
 /* fixed whatsapp icon */
 
 .whatsapp-fixed {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .whatsapp-fixed img {
-    width: 30px;
-    height: 30px;
-  }
-  
-  .whatsapp-fixed:hover {
-    transform: scale(1.1);
-  }
-  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-fixed img {
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp-fixed:hover {
+  transform: scale(1.1);
+}
 
 /* about */
 .about-section {
@@ -544,6 +549,8 @@ main {
 
 .card img {
   width: 100%;
+  height: 200px; /* Define uma altura fixa para manter a uniformidade */
+  object-fit: cover; /* Corta a imagem para preencher a área sem distorcer */
   border-radius: 10px;
 }
 
@@ -756,68 +763,91 @@ main {
 
 /* about */
 @media (max-width: 900px) {
-    .about-section {
-      flex-direction: column;
-      padding: 30px 20px;
-      text-align: center;
-    }
-  
-    .about-content {
-      max-width: 100%;
-    }
-  
-    .about-content p {
-      margin-right: 0;
-    }
-  
-    .contact-info {
-      justify-content: center;
-    }
-  
-    .about-image {
-      margin-top: 20px;
-    }
-  
-    .about-image img {
-      max-width: 100%;
-    }
+  .about-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    text-align: center;
   }
 
-  /* outros empreendimentos */
-  
-  @media (max-width: 768px) {
-    .others-buildings-ul {
-      flex-direction: column;
-      gap: 2rem;
-      padding: 0;
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-content p {
+    margin-right: 0;
+  }
+
+  .contact-info {
+    justify-content: center;
+  }
+
+  .about-image {
+    margin-top: 20px;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+}
+
+/* outros empreendimentos */
+
+@media (max-width: 768px) {
+  .others-buildings-ul {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .others-buildings-li {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .others-buildings-li > img {
+    width: 100%;
+    height: auto;
+    min-width: unset;
+    max-width: 100%;
+    min-height: unset;
+    max-height: 250px;
+  }
+
+  .others-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0 1.25rem;
+  }
+
+  .others-buildings-text {
+    padding: 0 1.25rem;
+  }
+
+  .others-more {
+    width: 90%;
+  }
+}
+
+/* destaque */
+
+@media (max-width: 900px) {
+  .destaque-info {
+    margin: 0 auto;
+  }
+}
+
+/* carrossel empreendimento */
+@media (max-width: 768px) {
+    .mySwiper2 {
+      max-height: 250px !important; /* Reduz a altura para telas menores */
     }
   
-    .others-buildings-li {
-      width: 100%;
-      max-width: 100%;
+    .mySwiperThumbs {
+      height: 60px !important; /* Miniaturas menores para economizar espaço */
     }
   
-    .others-buildings-li > img {
-      width: 100%;
-      height: auto;
-      min-width: unset;
-      max-width: 100%;
-      min-height: unset;
-      max-height: 250px;
-    }
-  
-    .others-info {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-      padding: 0 1.25rem;
-    }
-  
-    .others-buildings-text {
-      padding: 0 1.25rem;
-    }
-  
-    .others-more {
-      width: 90%;
+    .mySwiperThumbs .swiper-slide {
+      width: 25% !important; /* Aumenta um pouco para melhor navegação */
     }
   }

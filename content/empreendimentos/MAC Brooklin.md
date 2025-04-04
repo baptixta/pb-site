@@ -17,12 +17,12 @@ description: >-
   São Paulo.
 localizacao: 'Rua Comendador Eduardo Saccab, 280 X Rua Georgia, 65'
 imagens:
+  - /uploads/mac-brooklin-1.webp
+  - /uploads/mac-brooklin-2.webp
   - /uploads/mac-brooklin-6.webp
   - /uploads/mac-brooklin-5.webp
   - /uploads/mac-brooklin-4.webp
   - /uploads/mac-brooklin-3.webp
-  - /uploads/mac-brooklin-2.webp
-  - /uploads/mac-brooklin-1.webp
 dormitorios: 2 - 3 - 4
 area: 80 - 138 m²
 categoria: Em destaque

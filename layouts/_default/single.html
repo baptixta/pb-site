@@ -59,7 +59,7 @@
     {{ range $others }}
       <li class="others-buildings-li">
         <h3>{{ .Params.categoria }}</h3>
-        <img src="{{ index .Params.imagens 0 | absURL }}" alt="{{ .Title }}" />
+        <img src="{{ index .Params.imagens 0 | relURL }}" alt="{{ .Title }}" />
         <h2 href="{{ .RelPermalink }}">{{ .Title }}</h2>
         <p class="others-buildings-text">
           {{ .Params.description | truncate 75 }}
