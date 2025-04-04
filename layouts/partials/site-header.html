@@ -1,35 +1,47 @@
 {{ $featured_image := partial "func/GetFeaturedImage.html" . }}
 {{ if $featured_image }}
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
-    <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
-      {{ partial "site-navigation.html" .}}
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          {{ .Title | default .Site.Title }}
-        </h1>
-        {{ with .Params.description }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
-            {{ . }}
-          </h2>          
-        {{ end }}        
+  <header class="site-header bg-black flex items-center justify-between ph4 pv3">
+    <div class="flex items-center">
+      <img src="/logo.png" alt="Logo" class="logo mr3" />
+      <div class="white">
+        <h1 class="f4 ma0">Paulo Baptista</h1>
+        <p class="f6 ma0 silver">Corretor imobiliário</p>
       </div>
     </div>
+    
+    <nav class="flex items-center">
+      <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
+      <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
+      <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
+    </nav>
+  
+    <div class="flex items-center">
+      <img src="/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+      <span class="white f6">11981852310</span>
+    </div>
   </header>
+  
 {{ else }}
-  <header>
-    <div class="pb3-m pb6-l {{ .Site.Params.background_color_class | default "bg-black" }}">
-      {{ partial "site-navigation.html" . }}
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          {{ .Title | default .Site.Title }}
-        </h1>
-        {{ with .Params.description }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-            {{ . }}
-          </h2>
-        {{ end }}
-      </div>
+<header class="site-header bg-black flex items-center justify-between ph4 pv3">
+  <div class="main-name">
+    <img class="site-icon" src="/uploads/pb-small-logo.png" alt="Logo" class="logo mr3" />
+    <div class="white">
+      <h1 class="main-name-title">Paulo Baptista</h1>
+      <p class="main-name-subtitle">Corretor imobiliário</p>
     </div>
-  </header>
+  </div>
+  
+  <nav class="flex items-center">
+    <a href="/" class="link white-80 hover-blue pa2 br2">Início</a>
+    <a href="/imoveis" class="link white-80 hover-blue pa2 br2">Imóveis</a>
+    <a href="/contato" class="link white-80 hover-blue pa2 br2">Contato</a>
+  </nav>
+
+  <div class="flex items-center">
+    <img src="/uploads/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-icon mr2" />
+    <span class="white f6">11981852310</span>
+  </div>
+</header>
+
 {{ end }}

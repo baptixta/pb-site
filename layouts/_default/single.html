@@ -1,45 +1,100 @@
 {{ define "main" }}
-  <article class="article-base">
-    {{ if .Params.imagem }}
-      <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}">
-    {{ end }}
-    <h1>{{ .Title }}</h1>
-    <p><strong>Descrição:</strong> {{ .Params.description }}</p>
-    <p><strong>Preço:</strong> {{ .Params.preco }}</p>
-    <p><strong>Localização:</strong> {{ .Params.localizacao }}</p>
-    <p><strong>Dorms:</strong> {{ .Params.dormitorios }}</p>
-    <p><strong>Área:</strong> {{ .Params.area }}</p>
-    <p><strong>Categoria:</strong> {{ .Params.categoria }}</p>    
-  </article>
-
-  <!-- Lista de Outros Empreendimentos -->
-   <article class="article-more">
-    <h2 class="others">Outros Empreendimentos</h2>
-    <ul class="others-buildings-ul">
-      {{ range where .Site.RegularPages "Section" "empreendimentos" }}
-        {{ if ne .RelPermalink $.RelPermalink }}  <!-- Evita mostrar o próprio empreendimento -->
-          <li class="others-buildings-li">  
-            <h3>{{ .Params.categoria }}</h3>            
-            <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}">
-            <h2 href="{{ .RelPermalink }}">{{ .Title }}</h2>       
-            <p class="others-buildings-text">{{ .Params.description | truncate 75 }}</p>
-            <div class="others-info">
-                <div>
-                    <h2>Dorms.</h2>
-                    <h3>{{ .Params.dormitorios }}</h3>
-                </div>
-
-                <div>
-                    <h2>Área</h2>
-                    <h3>{{ .Params.area }}</h3>
-                </div>             
-            </div>   
-            <a class="others-more" href="{{ .RelPermalink }}">
-                Saiba Mais
-            </a>
-          </li>
-        {{ end }}
+<article class="article-base">
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Params.localizacao }}</p>
+  {{ if .Params.imagens }}
+  <!-- Carrossel principal -->
+  <div class="swiper mySwiper2">
+    <div class="swiper-wrapper">
+      {{ range .Params.imagens }}
+      <div class="swiper-slide">
+        <img
+          src="{{ . | relURL }}"
+          alt="Imagem do {{ $.Title }}"
+          style="width: 100%; height: auto; border-radius: 8px"
+        />
+      </div>
       {{ end }}
-    </ul>
-   </article>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Miniaturas (thumbnails) -->
+  <div class="swiper mySwiperThumbs">
+    <div class="swiper-wrapper">
+      {{ range .Params.imagens }}
+      <div class="swiper-slide">
+        <img
+          src="{{ . | relURL }}"
+          style="width: 100%; height: auto; border-radius: 6px"
+        />
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  <p><strong>Descrição:</strong> {{ .Params.description }}</p>
+  <p><strong>Preço:</strong> {{ .Params.preco }}</p>
+  <p><strong>Localização:</strong> {{ .Params.localizacao }}</p>
+  <p><strong>Dorms:</strong> {{ .Params.dormitorios }}</p>
+  <p><strong>Área:</strong> {{ .Params.area }}</p>
+  <p><strong>Categoria:</strong> {{ .Params.categoria }}</p>
+</article>
+
+<!-- Lista de Outros Empreendimentos -->
+<article class="article-more">
+  <h2 class="others">Outros Empreendimentos</h2>
+  <ul class="others-buildings-ul">
+    {{ range where .Site.RegularPages "Section" "empreendimentos" }} {{ if ne
+    .RelPermalink $.RelPermalink }}
+    <!-- Evita mostrar o próprio empreendimento -->
+    <li class="others-buildings-li">
+      <h3>{{ .Params.categoria }}</h3>
+      <img src="{{ .Params.imagem | relURL }}" alt="{{ .Title }}" />
+      <h2 href="{{ .RelPermalink }}">{{ .Title }}</h2>
+      <p class="others-buildings-text">
+        {{ .Params.description | truncate 75 }}
+      </p>
+      <div class="others-info">
+        <div>
+          <h2>Dorms.</h2>
+          <h3>{{ .Params.dormitorios }}</h3>
+        </div>
+
+        <div>
+          <h2>Área</h2>
+          <h3>{{ .Params.area }}</h3>
+        </div>
+      </div>
+      <a class="others-more" href="{{ .RelPermalink }}"> Saiba Mais </a>
+    </li>
+    {{ end }} {{ end }}
+  </ul>
+</article>
+
+<!-- Script para inicializar o Swiper -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const thumbsSwiper = new Swiper(".mySwiperThumbs", {
+      spaceBetween: 10,
+      slidesPerView: 5,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    const mainSwiper = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbsSwiper,
+      },
+    });
+  });
+</script>
+
 {{ end }}

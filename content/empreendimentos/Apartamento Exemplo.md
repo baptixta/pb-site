@@ -1,6 +1,7 @@
 ---
 date: '2022-10-11T12:32:31.000Z'
 draft: true
+imagem: /uploads/ia_te_ver_mas_choveu.png
 title: MAC Ibirapuera
 description: >-
   A MAC apresenta seu mais recente ícone do mercado imobiliário localizado em
@@ -14,7 +15,10 @@ description: >-
   bairro completo, em uma das mais desejadas e nobres regiões da cidade!
 preco: Consulte mais informações
 localizacao: 'Av. Ibirapuera, 2545 - Indianópolis, São Paulo - SP, 04029-200, Brasil'
-imagem: /uploads/ia_te_ver_mas_choveu.png
+imagens:
+  - /uploads/maden.jpg
+  - /uploads/campo-belo.webp
+  - /uploads/maden.jpg
 dormitorios: 1 - 2 - 3
 area: 151 - 194 m²
 categoria: Em destaque
